@@ -1,6 +1,6 @@
 # Selenium Template
 
-Minimalist .NET template for running *Selenium WebDriver* tests using NUnit + example.
+Minimalist .NET project template for running *Selenium WebDriver* tests using NUnit + example.
 
 ## Features:
 - Page Object Pattern
