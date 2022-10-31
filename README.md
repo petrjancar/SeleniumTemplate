@@ -1,19 +1,19 @@
 # Selenium Template
 
-Minimalist .NET template for running Selenium WebDriver tests using NUnit + example.
+Minimalist .NET template for running *Selenium WebDriver* tests using NUnit + example.
 
 ## Features:
 - Page Object Pattern
 - Automatic driver management (via [WebDriverManager](https://www.nuget.org/packages/WebDriverManager))
-- Multiple browsers support
-- Parallel tests
-- Screenshot on failed test
-- Support for .runsettings
+- Cross-browser support
+- Parallel test execution
+- Screenshot on test failure
+- Configuration using a `.runsetting` file
 - Working with Jenkins
-- Eaisly extendable
+- Easily extendable
 
 ## NuGet dependencies:
-- Selenium.WebDriver
-- Selenium.Support
-- DotNetSeleniumExtras.WaitHelpers
-- WebDriverManager
+- [Selenium.WebDriver](https://www.nuget.org/packages/Selenium.WebDriver)
+- [Selenium.Support](https://www.nuget.org/packages/Selenium.Support)
+- [DotNetSeleniumExtras.WaitHelpers](https://www.nuget.org/packages/DotNetSeleniumExtras.WaitHelpers)
+- [WebDriverManager](https://www.nuget.org/packages/WebDriverManager)
