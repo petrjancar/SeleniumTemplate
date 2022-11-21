@@ -1,14 +1,18 @@
 using OpenQA.Selenium;
+using SeleniumTemplate.Helpers;
 
 namespace SeleniumTemplate.WebElements;
 
-public class CheckBox : IWrapsElement
+public class CheckBox : BaseElement
 {
-    public IWebElement WrappedElement { get; }
-    
-    public CheckBox(IWebElement wrappedElement)
+    public CheckBox(IWebDriver driver, IWebElement wrappedElement) : base(driver, wrappedElement)
     {
-        WrappedElement = wrappedElement;
+        
+    }
+
+    protected override void WaitTillReady()
+    {
+        WaitHelper.WaitForClickable(Driver, WrappedElement, TimeoutHelper.MidTimeout);
     }
 
     public bool IsChecked()
@@ -18,6 +22,7 @@ public class CheckBox : IWrapsElement
 
     public void Check()
     {
+        WaitTillReady();
         if (IsChecked())
         {
             return;
@@ -27,6 +32,7 @@ public class CheckBox : IWrapsElement
     
     public void Uncheck()
     {
+        WaitTillReady();
         if (IsChecked())
         {
             WrappedElement.Click();
