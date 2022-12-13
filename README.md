@@ -9,7 +9,7 @@ Minimalist .NET project template for running *Selenium WebDriver* tests using NU
 - Parallel test execution
 - Screenshot on test failure
 - Configuration using a `.runsettings` file
-- Working with Jenkins
+- Suitable for CI/CD (e.g. with [Jenkins](https://www.jenkins.io/))
 - Easily extendable
 
 ## NuGet dependencies:
