@@ -5,7 +5,7 @@ namespace SeleniumTemplate.WebElements;
 
 public class CheckBox : BaseElement
 {
-    public CheckBox(IWebDriver driver, IWebElement wrappedElement) : base(driver, wrappedElement)
+    public CheckBox(IWebDriver driver, By wrappedElementBy, int timeout = TimeoutHelper.MidTimeout) : base(driver, wrappedElementBy, timeout)
     {
         
     }

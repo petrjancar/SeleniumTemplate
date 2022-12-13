@@ -5,7 +5,7 @@ namespace SeleniumTemplate.WebElements;
 
 public class Button : BaseElement
 {
-    public Button(IWebDriver driver, IWebElement wrappedElement) : base(driver, wrappedElement)
+    public Button(IWebDriver driver, By wrappedElementBy, int timeout=TimeoutHelper.MidTimeout) : base(driver, wrappedElementBy, timeout)
     {
         
     }

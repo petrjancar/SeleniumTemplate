@@ -10,19 +10,5 @@ public abstract class BaseFragment
     {
         Driver = driver;
     }
-
-    public bool ElementHaveClass(IWebElement element, string classStr)
-    {
-        string classes = element.GetAttribute("class");
-        foreach (string c in classes.Split(" "))
-        {
-            if (string.Compare(c, classStr) == 0)
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }
 }
 

@@ -15,20 +15,6 @@ public abstract class BasePage
     public void Navigate()
     {
         Driver.Navigate().GoToUrl(Url);
-    }
-
-    public bool ElementHaveClass(IWebElement element, string classStr)
-    {
-        string classes = element.GetAttribute("class");
-        foreach (string c in classes.Split(" "))
-        {
-            if (c.Equals(classStr))
-            {
-                return true;
-            }
-        }
-
-        return false;
-    }    
+    }      
 }
 

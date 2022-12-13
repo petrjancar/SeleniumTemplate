@@ -26,7 +26,7 @@ public abstract class BaseTests
             if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
             {
                 Console.WriteLine("Taking screenshot after failed test is turned on...");
-                string fileName = TakeScreenshot();
+                string fileName = ScreenshotHelper.TakeScreenshot(Driver);
                 if (fileName != null)
                 {
                     Console.WriteLine("Screenshot was saved as: " + fileName);
@@ -35,35 +35,6 @@ public abstract class BaseTests
         }
 
         Driver.Quit();
-    }
-
-    public string TakeScreenshot(string prefix = "")
-    {
-        Console.WriteLine("Taking screenshot...");
-        string fileName = null;
-
-        try
-        {
-            Directory.CreateDirectory(SetupHelper.ScreenshotDirectory);
-            
-            Screenshot screenshot = ((ITakesScreenshot)Driver).GetScreenshot();
-            if (prefix != "")
-            {
-                fileName = SetupHelper.ScreenshotDirectory + @"/" + prefix + "_" + TestContext.CurrentContext.Test.Name + "_" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".png";
-            }
-            else
-            {
-                fileName = SetupHelper.ScreenshotDirectory + @"/" + TestContext.CurrentContext.Test.Name + "_" + DateTime.Now.ToString("dd-MM-yyyy_HH-mm-ss") + ".png";
-            }
-            screenshot.SaveAsFile(fileName, ScreenshotImageFormat.Png);
-            Console.WriteLine("Screenshot successful!");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Screenshot unsuccessful!: " + e.Message);
-        }
-
-        return fileName;
     }
     
     private static void RunSettingsSetup()
